@@ -16,9 +16,6 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Build package
-      run: npm install && npm run build
-
     - name: Publish to GPR
       run: npm publish
       env:
