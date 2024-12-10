@@ -3,18 +3,17 @@
   "version": "1.0.0",
   "description": "Your package description",
   "main": "index.js",
+  "repository": "git://github.com/your-org/your-repo-name.git"
+  "author": "gowridurgad",
+  "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gowridurgad/test2.git"
-  },
+ 
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "author": "Your Name",
-  "license": "ISC",
+ 
   "bugs": {
     "url": "https://github.com/gowridurgad/test2/issues"
   },
