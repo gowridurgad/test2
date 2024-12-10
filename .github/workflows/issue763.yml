@@ -11,6 +11,8 @@ jobs:
       with:
          node-version: '20.x'
          registry-url: 'https://registry.npmjs.org'
+    - name: Authenticate to GitHub Packages
+      run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.MY_GITHUB }}" > ~/.npmrc
     - run: npm ci
     - run: npm publish
       env:
