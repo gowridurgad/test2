@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gowridurga.d/test2.git"
+    "url": "git+https://github.com/gowridurgad/test2.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -16,7 +16,7 @@
   "author": "Your Name",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gowridurga.d/test2/issues"
+    "url": "https://github.com/gowridurgad/test2/issues"
   },
-  "homepage": "https://github.com/gowridurga.d/test2#readme"
+  "homepage": "https://github.com/gowridurgad/test2#readme"
 }
