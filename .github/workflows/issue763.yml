@@ -23,8 +23,7 @@ jobs:
     - name: Fix package.json issues
       run: npm pkg fix
 
-    - name: Build the project
-      run: npm run build
+  
 
     - name: Publish to GPR
       run: npm publish
