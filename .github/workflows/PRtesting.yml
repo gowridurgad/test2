@@ -7,9 +7,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest, macos-13]
+        os: [windows-latest, ubuntu-latest, macos-latest, macos-13, ubuntu-24.04-arm, windows-11-arm]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Set up Node.js
+      - name: Set up python
         uses: gowridurgad/sample-python@main
