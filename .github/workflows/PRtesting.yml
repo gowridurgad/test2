@@ -8,8 +8,11 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest, macos-13]
+        python-version: [3.9, 3.10, 3.11, 3.12, 3.13]  
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up python
         uses: gowridurgad/sample-python@main
+        with:
+          python-version: ${{ matrix.python-version }}
