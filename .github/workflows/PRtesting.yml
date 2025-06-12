@@ -8,7 +8,8 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest, macos-13]
-        python-version: ['3.9','3.10','3.11', '3.12', '3.13', '3.13t']
+        python-version: 
+        - '>=3.9 <3.14'
        
     steps:
       - name: Checkout code
