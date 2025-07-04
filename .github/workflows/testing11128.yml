@@ -1,0 +1,33 @@
+name: main
+
+on:
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: ls -la
+      - run: cat requirements.txt
+
+      - uses: actions/setup-python@main
+
+      - run: ls -la
+      - run: cat requirements.txt
+      - run: grep "Testing mainfile" requirements.txt
+
+  maybe-reproduce-full-path:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: ls -la
+      - run: cat requirements.txt
+
+      - uses: gowridurgad/sample-python@main
+
+      - run: ls -la
+      - run: cat requirements.txt
+      - run: grep "Testing mainfile" requirements.txt
