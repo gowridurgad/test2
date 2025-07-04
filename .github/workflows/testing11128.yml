@@ -15,8 +15,8 @@ jobs:
       - uses: actions/setup-python@main
 
       - run: ls -la
-      - run: cat requirements.txt
-      - run: grep "Testing mainfile" requirements.txt
+      - run: cat temp/requirements.txt
+      - run: grep "Testing workflow" requirements.txt
 
   maybe-reproduce-full-path:
     runs-on: ubuntu-latest
@@ -24,10 +24,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: ls -la
-      - run: cat requirements.txt
+      - run: cat temp/requirements.txt
 
       - uses: gowridurgad/sample-python@main
 
       - run: ls -la
-      - run: cat requirements.txt
-      - run: grep "Testing mainfile" requirements.txt
+      - run: cat temp/requirements.txt
+      - run: grep "Testing workflow" requirements.txt
