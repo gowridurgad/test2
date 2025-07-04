@@ -16,7 +16,7 @@ jobs:
 
       - run: ls -la
       - run: cat temp/requirements.txt
-      - run: grep "Testing workflow" requirements.txt
+      - run: grep "testing workflow" requirements.txt
 
   maybe-reproduce-full-path:
     runs-on: ubuntu-latest
@@ -30,4 +30,4 @@ jobs:
 
       - run: ls -la
       - run: cat temp/requirements.txt
-      - run: grep "Testing workflow" temp/requirements.txt
+      - run: grep "testing workflow" temp/requirements.txt
