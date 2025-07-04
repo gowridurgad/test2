@@ -23,11 +23,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: ls -la
-      - run: cat requirements.txt
-
       - uses: gowridurgad/sample-python@main
 
-      - run: ls -la
-      - run: cat requirements.txt
-      - run: grep "Testing mainfile" requirements.txt
+      
