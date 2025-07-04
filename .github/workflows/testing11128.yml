@@ -30,4 +30,4 @@ jobs:
 
       - run: ls -la
       - run: cat temp/requirements.txt
-      - run: grep "testing workflow" temp/requirements.txt
+      - run: grep "Consumer repo requirements" temp/requirements.txt
