@@ -28,6 +28,4 @@ jobs:
 
       - uses: gowridurgad/sample-python@main
 
-      - run: ls -la
-      - run: cat temp/requirements.txt
-      - run: grep "testing workflow" temp/requirements.txt
+  
