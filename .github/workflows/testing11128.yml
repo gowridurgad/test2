@@ -10,12 +10,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: ls -la
-      - run: cat temp/requirements.txt
+      - run: cat requirements.txt
 
       - uses: gowridurgad/sample-python@main
 
       - run: ls -la
-      - run: cat temp/requirements.txt
+      - run: cat requirements.txt
       
 
   
