@@ -16,12 +16,12 @@ jobs:
     
     
       - name: Set up python
-        uses: actions/setup-python@main
+        uses: actions/setup-python@v5
         with:
              python-version:  '3.11'
              cache: pip
              cache-dependency-path: temp/requirements.txt
-             overwrite: true
+            
       - run: pip install -r temp/requirements.txt
              
              
