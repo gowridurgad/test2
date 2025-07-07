@@ -15,8 +15,12 @@ jobs:
      
 
       - uses: gowridurgad/sample-python@main
+   
+      
 
     
+      - run: cat temp/requirements.txt
+      - run: pip install -r temp/requirements.txt
       - run: cat temp/requirements.txt
       
 
