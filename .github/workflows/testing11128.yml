@@ -13,18 +13,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Install poetry
+        run: pipx install poetry
     
     
       - name: Set up python
         uses: aparnajyothi-y/setup-python@fix-overwirting
         with:
              python-version:  '3.11'
-             cache: pipenv
-             cache-dependency-path: Pipfile.lock
+             cache: poetry
+             cache-dependency-path: poetry.lock
              overwrite: true
-      - name: Install pipenv
-        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
-      - run: pipenv install
+   
+      - run: poetry install
              
              
             
