@@ -13,27 +13,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Install poetry
-        run: pipx install poetry
     
     
       - name: Set up python
-        uses: aparnajyothi-y/setup-python@fix-overwirting
+        uses: actions/setup-python@main
         with:
              python-version:  '3.11'
-             cache: poetry
-             cache-dependency-path: poetry.lock
+             cache: pip
+             cache-dependency-path: temp/requirements.txt
              overwrite: true
-   
-      - run: poetry install
+      - run: pip install -r temp/requirements.txt
              
              
             
-             
-            
-     
-
-      
-      
-
-  
