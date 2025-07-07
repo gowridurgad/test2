@@ -18,7 +18,7 @@ jobs:
       - name: Set up python
         uses: aparnajyothi-y/setup-python@fix-overwirting
         with:
-             python-version:  'pypy3.11'
+             python-version:  'graalpy-24.0.2'
              overwrite: true
              
             
