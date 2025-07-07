@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: cat temp/requirements.txt
+    
       
 
      
@@ -16,7 +16,7 @@ jobs:
       - uses: gowridurgad/sample-python@main
 
     
-      - run: cat temp/requirements.txt
+      - run: cat requirements.txt
       
 
             
