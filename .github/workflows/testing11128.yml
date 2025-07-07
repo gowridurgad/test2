@@ -12,8 +12,7 @@ jobs:
 
       - uses: gowridurgad/sample-python@main
 
-      - run: ls -la
-      - run: cat temp/requirements.txt
+      
       
 
   
