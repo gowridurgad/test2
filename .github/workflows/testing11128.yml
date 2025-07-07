@@ -19,10 +19,12 @@ jobs:
         uses: aparnajyothi-y/setup-python@fix-overwirting
         with:
              python-version:  '3.11'
-             cache: pip
-             cache-dependency-path: temp/requirements.txt
+             cache: pipenv
+             cache-dependency-path: Pipfile.lock
              overwrite: true
-      - run: pip install -r temp/requirements.txt
+      - name: Install pipenv
+        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
+      - run: pipenv install
              
              
             
