@@ -13,11 +13,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - run: cat pyproject.toml
+    
     
       - name: Set up python
-        uses: gowridurgad/sample-python@main
-      - run: cat pyproject.toml
+        uses: aparnajyothi-y/setup-python@fix-overwirting
+        with:
+             python-version:  'pypy3.11'
+             overwrite: true
+             
+            
+     
 
       
       
