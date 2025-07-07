@@ -18,8 +18,9 @@ jobs:
       - name: Set up python
         uses: aparnajyothi-y/setup-python@fix-overwirting
         with:
-             python-version:  '3.14.0-beta.1'
+             python-version:  '3.14'
              overwrite: true
+             allow-prereleases: true
              
             
              
