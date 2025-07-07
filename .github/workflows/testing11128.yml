@@ -13,11 +13,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - run: cat Pipfile.lock
+      - run: cat Pipfile
     
       - name: Set up python
         uses: gowridurgad/sample-python@main
-      - run: cat Pipfile.lock
+      - run: cat Pipfile
 
       
       
