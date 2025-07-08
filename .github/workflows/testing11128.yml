@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: cat temp/requirements.txt
+      - run: cat Pipfile
     
       
 
@@ -18,9 +18,9 @@ jobs:
 
 
     
-      - run: cat temp/requirements.txt
-      - run: pip install -r temp/requirements.txt
-      - run: cat temp/requirements.txt
+      - run: cat Pipfile
+    
+     
       
 
             
