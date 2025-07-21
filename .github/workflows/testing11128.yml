@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: cat pyproject.toml
+      - run: cat Pipfile
 
      
 
       - uses: gowridurgad/sample-python@main
-      - run: cat pyproject.toml
+      - run: cat Pipfile
 
 
     
