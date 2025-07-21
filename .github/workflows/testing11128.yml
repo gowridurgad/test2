@@ -1,27 +1,22 @@
 name: main
-
 on:
   workflow_dispatch:
-
 jobs:
-  reproduce:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest, macos-13, ubuntu-24.04-arm, windows-11-arm ]
+        
+       
     steps:
-      - uses: actions/checkout@v4
-      - run: cat requirements.txt
-     
-
-     
-
-      - uses: gowridurgad/sample-python@main
-      - run: cat requirements.txt
-     
-
-
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - run: cat temp/requirements.txt
     
-    
-    
-     
+      - name: Set up python
+        uses: gowridurgad/sample-python@main
+      - run: cat temp/requirements.txt
+
       
-
-            
