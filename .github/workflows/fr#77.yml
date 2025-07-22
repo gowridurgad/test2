@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4 
       - name: Set up python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@main
         # uses: gowridurgad/setup-python@pip-install
         with:
       
