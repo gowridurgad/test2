@@ -17,6 +17,7 @@ jobs:
         with:
       
             python-version:  '3.11'
+            pip-version: 24
             cache: pip
             cache-dependency-path: testing.txt 
             pip-install: -r testing.txt 
