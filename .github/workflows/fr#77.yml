@@ -12,7 +12,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4 
       - name: Set up python
-        uses: gowridurgad/setup-python@pip-install
+        uses: actions/setup-python@v5
+        # uses: gowridurgad/setup-python@pip-install
         with:
       
             python-version:  '3.11'
