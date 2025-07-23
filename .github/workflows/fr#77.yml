@@ -16,8 +16,8 @@ jobs:
         uses: gowridurgad/setup-python@pip-install
         with:
       
-            python-version:  '3.14'     
-            allow-prereleases: true
+            python-version:  '3.11'     
+            update-environment: true
             cache: pip
             cache-dependency-path: requirements.txt
             pip-install: -r requirements.txt
