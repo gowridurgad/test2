@@ -16,10 +16,12 @@ jobs:
         uses: gowridurgad/setup-python@pip-install
         with:
       
-            python-version:  '3.14.0-beta.1'     
+            python-version:  '3.14'     
+            allow-prereleases: true
             cache: pip
             cache-dependency-path: requirements.txt
             pip-install: -r requirements.txt
+             
             
       # - run: pip install -r testing.txt 
           
