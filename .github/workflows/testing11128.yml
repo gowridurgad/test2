@@ -3,12 +3,12 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    # runs-on: ${{ matrix.os }} 
-    runs-on: self-hosted
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     os: [windows-latest, ubuntu-latest, macos-latest, macos-13, ubuntu-24.04-arm, windows-11-arm ]
+    runs-on: ${{ matrix.os }} 
+    # runs-on: self-hosted
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest, macos-13, ubuntu-24.04-arm, windows-11-arm ]
         
        
     steps:
