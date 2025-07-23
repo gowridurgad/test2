@@ -16,7 +16,8 @@ jobs:
         uses: gowridurgad/setup-python@pip-install
         with:
       
-            python-version:  'graalpy-24.0.2'
+            python-version:  '3.13'
+            freethreaded: true
           
             cache: pip
             cache-dependency-path: requirements.txt
