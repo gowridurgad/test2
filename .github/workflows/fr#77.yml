@@ -12,11 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Generate requirements.txt
-        run: |
-          echo "requests==2.31.0" > requirements.txt
-          echo "pytest" >> requirements.txt
-
       - name: Set up python
         uses: gowridurgad/setup-python@pip-install
         with:
@@ -24,3 +19,5 @@ jobs:
           cache: pip
           cache-dependency-path: requirements.txt
           pip-install: -r requirements.txt
+          pip install: -r requirements-dev.txt
+          
