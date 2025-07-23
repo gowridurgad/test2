@@ -16,7 +16,7 @@ jobs:
         uses: gowridurgad/setup-python@pip-install
         with:
       
-            python-version:  '3.13.0-alpha - 3.13.0'        
+            python-version:  '3.x'        
             cache: pip
             cache-dependency-path: requirements.txt
             pip-install: -r requirements.txt
