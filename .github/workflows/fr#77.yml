@@ -12,13 +12,37 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up python and install dependencies
-        # uses: gowridurgad/setup-python@pip-install
-        uses: actions/setup-python@v5
+      # Pre-install script step (example)
+      - name: Pre-install script
+        run: |
+          echo "Running pre-install script: preparing environment"
+          sudo apt-get update && sudo apt-get install -y libpq-dev
+
+      # Set environment variables
+      - name: Set environment variables
+        run: |
+          echo "MY_SECRET=supersecret" >> $GITHUB_ENV
+         
+
+      # Install dependencies with custom flags
+      - name: Set up python and install dependencies with custom flags
+        uses: gowridurgad/setup-python@pip-install
         with:
           python-version: '3.11'
           cache: pip
-          # cache-dependency-path: requirements.txt
-      - name: install dependencies
-        run:  pip install --pre pandas
-       
+          cache-dependency-path: requirements.txt
+          pip-install: -r requirements.txt --upgrade --no-cache-dir
+
+      # Post-install script step (example)
+      - name: Post-install script
+        run: echo "Running post-install script finalizing setup"
+
+      # Print environment variables
+      - name: Print environment variables
+        run: |
+          echo "MY_SECRET=$MY_SECRET"
+    
+
+      # Example: Run application with a custom flag
+      - name: Run application with a custom flag
+        run: python your_app.py --custom-flag
