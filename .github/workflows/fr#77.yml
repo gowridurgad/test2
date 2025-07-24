@@ -44,6 +44,4 @@ jobs:
           echo "MY_SECRET=$MY_SECRET"
     
 
-      # Example: Run application with a custom flag
-      - name: Run application with a custom flag
-        run: python your_app.py --custom-flag
+
