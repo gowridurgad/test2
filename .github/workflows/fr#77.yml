@@ -14,6 +14,7 @@ jobs:
 
       # Pre-install script step (example)
       - name: Pre-install script
+        if: runner.os == 'Linux'
         run: |
           echo "Running pre-install script: preparing environment"
           sudo apt-get update && sudo apt-get install -y libpq-dev
