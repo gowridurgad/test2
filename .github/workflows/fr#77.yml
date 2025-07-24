@@ -18,5 +18,5 @@ jobs:
           python-version: '3.11'
           cache: pip
           cache-dependency-path: requirements.txt
-          pip-install: ./dist/mypackage-0.0.0.tar.gz
+          pip-install: ./src/dist/mypackage-0.0.0.tar.gz
        
