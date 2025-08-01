@@ -7,8 +7,8 @@ jobs:
     runs-on: self-hosted
     steps:
      
-      # - name: Fix permissions for dotnet install
-      #   run: sudo chmod -R 777 /usr/lib/dotnet
+      - name: Fix permissions for dotnet install
+        run: sudo chmod -R 777 /usr/lib/dotnet
       - name: setup-dotnet
         uses: actions/setup-dotnet@v4
         with:
