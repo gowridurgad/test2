@@ -1,0 +1,23 @@
+name: 'demo-test'
+on:
+  workflow_dispatch:
+jobs:
+  setup:
+    name: Setup .NET on all platforms
+    runs-on: self-hosted
+    steps:
+      - name: setup-dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - name: 'verify-dotnet'
+        run: |
+          dotnet tool install --global dotnet-script --version 1.6.0
+          cat <<'EOF' > test.csx
+          var version = Environment.Version;
+          if (version.Major != 9 || version.Minor != 0)
+          {
+            throw new Exception($"Want .NET 9.0.x, got {version}");
+          }
+          EOF
+          dotnet-script test.csx
