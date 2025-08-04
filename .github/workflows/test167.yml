@@ -21,7 +21,7 @@ jobs:
           <configuration>
             <packageSources>
               <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
-              <add key="github" value="https://nuget.pkg.github.com/gowriduragd/index.json" />
+              <add key="github" value="https://nuget.pkg.github.com/gowridurgad/index.json" />
             </packageSources>
           </configuration>
           EOF
@@ -29,9 +29,9 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.x'
-          source-url: https://nuget.pkg.github.com/gowriduragd/index.json
+          source-url: https://nuget.pkg.github.com/gowridurgad/index.json
       - name: Remove existing source (if any)
-        run: dotnet nuget remove source https://api.nuget.org/v3/index.json || true
+        run: dotnet nuget remove source gowridurgad || true
       - name: Add GitHub Packages Source
         run: dotnet nuget add source https://api.nuget.org/v3/index.json  --name github --username ${{ github.actor }} --password ${{ secrets.TOKEN_GITHUB }} --store-password-in-clear-text
       - name: Restore NuGet packages
