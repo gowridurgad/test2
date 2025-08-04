@@ -30,6 +30,8 @@ jobs:
         with:
           dotnet-version: '9.x'
           source-url: https://nuget.pkg.github.com/gowriduragd/index.json
+      - name: Remove existing source (if any)
+        run: dotnet nuget remove source https://api.nuget.org/v3/index.json || true
       - name: Add GitHub Packages Source
         run: dotnet nuget add source https://api.nuget.org/v3/index.json  --name github --username ${{ github.actor }} --password ${{ secrets.TOKEN_GITHUB }} --store-password-in-clear-text
       - name: Restore NuGet packages
