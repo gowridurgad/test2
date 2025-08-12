@@ -14,7 +14,7 @@ jobs:
 
 
       - name: Set up python 
-        uses: gowridurgad/setup-python@pip-install-testcases
+        uses: gowridurgad/setup-python@pip-install
         with:
           python-version: '3.11'
           cache: pip
