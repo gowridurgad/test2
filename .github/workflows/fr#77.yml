@@ -14,10 +14,9 @@ jobs:
 
 
       - name: Set up python 
-        uses: actions/setup-python@v5
+        uses: gowridurgad/setup-python@pip-install
         with:
           python-version: '3.11'
           cache: pip
-          
-      - run: pip install ''
-    
+          pip-install: ''
+              
