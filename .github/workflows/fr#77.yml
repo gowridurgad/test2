@@ -7,15 +7,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
+        os: [windows-latest, ubuntu-latest, macos-latest, macos-13]       
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-
-
-      - name: Set up python 
+        uses: actions/checkout@v4 
+      - name: Set up python
         uses: gowridurgad/setup-python@pip-install
         with:
-          
-          pip-install: '-r requirements.dev.txt'
+      
+            python-version:  '3.11'
+            cache: pip
+            cache-dependency-path: requirements.txt 
+            pip-install: -r requirements.txt
               
