@@ -12,11 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4 
       - name: Set up python
-        # uses: actions/setup-python@v5
+        # uses: actions/setup-python@main
         uses: gowridurgad/setup-python@pip-install
         with:
       
             python-version:  '3.11'
+            pip-version: 24
             cache: pip
-            
-      - run: pip install -r requirements-dev.txt
+            cache-dependency-path: requirements-dev.txt
+            pip-install: -r requirements-dev.txt
+   
+          
