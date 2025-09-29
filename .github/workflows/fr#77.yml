@@ -13,13 +13,12 @@ jobs:
         uses: actions/checkout@v4 
       - name: Set up python
         # uses: actions/setup-python@main
-        uses: gowridurgad/setup-python@pip-install-input
+        uses: actions/setup-python@main
         with:
       
             python-version:  '3.11'
             pip-version: 24
             cache: pip
-            cache-dependency-path: requirements-dev.txt
-            pip-install: -r requirements-dev.txt
+            pip-install: pyproject.toml
    
           
