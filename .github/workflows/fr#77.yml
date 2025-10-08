@@ -17,5 +17,7 @@ jobs:
       
             python-version:  '3.11'
             cache: pip
-            pip-install: .
+            # pip-install: .
+      - name: Install dependencies
+        run: pip install .
           
