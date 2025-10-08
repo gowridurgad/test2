@@ -17,6 +17,5 @@ jobs:
       
             python-version:  '3.11'
             cache: pip
-            pip-install: pyproject.toml
-   
+            pip-install: .
           
