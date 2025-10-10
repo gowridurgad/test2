@@ -4,10 +4,7 @@ version = "0.1.0"
 description = "My package description"
 readme = "README.md"
 authors = [{ name = "gowridurgad" }, { name = "gowridurgad" }]
+dependencies = [
+ "pandas"
+]
 
-[tool.poetry.dependencies]
-python = "^3.8.1"
-Jinja2 = ">=2.11"
-importlib-resources = ">=5.1"
-wstd2daisy = ">=0.5.3"
-pydantic = ">=2.9.1"
