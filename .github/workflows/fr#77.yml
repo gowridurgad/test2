@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4 
+      - name: Remove WindowsApps from PATH
+        if: runner.os == 'Windows'
+        run: |
+          echo "PATH=${PATH//C:\\Users\\runneradmin\\AppData\\Local\\Microsoft\\WindowsApps;}" >> $env:GITHUB_ENV
       - name: Set up python
         uses: actions/setup-python@main
         with:
