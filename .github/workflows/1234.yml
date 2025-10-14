@@ -8,15 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # Restore Node.js modules cache (restore-only)
-      - name: Restore Node modules cache
-        uses: actions/cache@v3
-        id: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+      # # Restore Node.js modules cache (restore-only)
+      # - name: Restore Node modules cache
+      #   uses: actions/cache@v3
+      #   id: cache-node-modules
+      #   with:
+      #     path: ~/.npm
+      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-node-
       # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v6
