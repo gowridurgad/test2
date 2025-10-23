@@ -14,6 +14,10 @@
     "npm": "^11.0.0"
   },
   "devEngines": {
-    "packageManager": "^11.5.1"
-  },
+    "packageManager": {
+      "name": "npm",
+      "version": "^11.5.1"
+    }
+  }
+}
   
