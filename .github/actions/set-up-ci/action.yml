@@ -11,7 +11,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@v6
       with:
         node-version: ${{ inputs.node-version }}
         check-latest: true
@@ -20,11 +20,7 @@ runs:
     - name: Upgrade npm
       run: npm install -g npm@${{ inputs.npm-version }}
       shell: bash
-    - name: Ensure upgraded npm in PATH
-      run: |
-        echo "Adding upgraded npm to PATH"
-        echo "$(npm bin -g)" >> $GITHUB_PATH
-      shell: bash
+    
     - name: Install dependencies
       run: npm ci
       shell: bash
