@@ -17,9 +17,15 @@ runs:
         check-latest: true
         cache: "npm"
         cache-dependency-path: "package-lock.json"
-    - name: Temporarily disable engine checks
-      run: npm config set engine-strict false
+
+    - name: Enable and prepare npm via Corepack
+      run: |
+        corepack enable
+        corepack prepare npm@${{ inputs.npm-version }} --activate
+        npm -v
       shell: bash
+
+   
 
     - name: Upgrade npm
       run: npm install -g npm@${{ inputs.npm-version }}
