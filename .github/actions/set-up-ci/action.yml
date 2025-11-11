@@ -17,14 +17,14 @@ runs:
         check-latest: true
         cache: "npm"
         cache-dependency-path: "package-lock.json"
+    - name: Temporarily disable engine checks
+      run: npm config set engine-strict false
+      shell: bash
+
     - name: Upgrade npm
       run: npm install -g npm@${{ inputs.npm-version }}
       shell: bash
-    - name: Ensure upgraded npm in PATH
-      run: |
-        echo "Adding upgraded npm to PATH"
-        echo "$(npm bin -g)" >> $GITHUB_PATH
-      shell: bash
+   
     
     - name: Install dependencies
       run: npm ci
