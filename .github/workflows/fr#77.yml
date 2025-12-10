@@ -10,13 +10,10 @@ jobs:
         os: [ubuntu-latest ]       
     steps:
 
-     - name: Temporary pip workaround (NOT on Ubuntu 24)
+     - name: Temporary pip workaround (skip on Ubuntu 24)
        if: ${{ !contains(runner.image, 'ubuntu24') }}
        run: |
-          sudo cat <<EOF > /etc/pip.conf
-          [global]
-          break-system-packages = true
-          EOF
+           echo -e "[global]\nbreak-system-packages = true" | sudo tee /etc/pip.conf
      - name: Checkout code
        uses: actions/checkout@v4 
      - name: Set up python
