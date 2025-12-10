@@ -10,9 +10,8 @@ jobs:
         os: [ubuntu-latest ]       
     steps:
 
-     - name: Simulate pip restriction
-       run: |
-          echo -e "[global]\nbreak-system-packages = false" | sudo tee /etc/pip.conf
+     - name: Remove pip workaround config (if present)
+       run: sudo rm -f /etc/pip.conf
 
      
      - name: Checkout code
