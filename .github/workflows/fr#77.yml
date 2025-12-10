@@ -33,3 +33,6 @@ jobs:
           cache: pip
           cache-dependency-path: temp/equirements.txt
           pip-install: -r temp/requirements.txt
+
+      - name: install dep
+        run : pip install temp/requirements.txt
