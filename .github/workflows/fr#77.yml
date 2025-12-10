@@ -10,18 +10,11 @@ jobs:
         os: [ubuntu-latest ]       
     steps:
 
-     - name: Temporary pip workaround (skip on Ubuntu 24)
-       if: ${{ !contains(runner.image, 'ubuntu24') }}
+     - name: Simulate pip restriction
        run: |
-           echo -e "[global]\nbreak-system-packages = true" | sudo tee /etc/pip.conf
+          echo -e "[global]\nbreak-system-packages = false" | sudo tee /etc/pip.conf
 
-     - name: Check for workaround in pip.conf
-       run: |
-           if grep -q "break-system-packages = true" /etc/pip.conf; then
-             echo "Workaround is present in pip.conf."
-           else
-             echo "Workaround is NOT present in pip.conf."
-           fi
+     
      - name: Checkout code
        uses: actions/checkout@v4 
      - name: Set up python
