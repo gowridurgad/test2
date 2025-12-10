@@ -7,26 +7,23 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2025, ubuntu-latest, macos-latest, macos-13]       
+        os: [ubuntu-latest ]       
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4 
-      # - name: Remove WindowsApps from PATH
-      #   if: runner.os == 'Windows'
-      #   run: |
-      #     echo "PATH=${PATH//C:\\Users\\runneradmin\\AppData\\Local\\Microsoft\\WindowsApps;}" >> $env:GITHUB_ENV
-      - name: Remove WindowsApps from PATH
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-            $env:PATH = (($env:PATH -split ';') | Where-Object { $_ -ne 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps' }) -join ';'
-            echo "PATH=$env:PATH" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-      - name: Set up python
-        uses: actions/setup-python@main
-        with:
+
+     - name: Temporary pip workaround (NOT on Ubuntu 24)
+       if: ${{ !contains(runner.image, 'ubuntu24') }}
+       run: |
+          sudo cat <<EOF > /etc/pip.conf
+          [global]
+          break-system-packages = true
+          EOF
+     - name: Checkout code
+       uses: actions/checkout@v4 
+     - name: Set up python
+       uses: actions/setup-python@v6
+       with:
       
             python-version:  '3.11'
             cache: pip
-            pip-install: .
-
-          
+            cache-dependency-path: requirements.txt 
+            pip-install: -r requirements.txt
