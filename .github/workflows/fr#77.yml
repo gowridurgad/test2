@@ -35,4 +35,4 @@ jobs:
           pip-install: -r temp/requirements.txt
 
       - name: install dep
-        run : pip install temp/requirements.txt
+        run : pip install -r temp/requirements.txt
