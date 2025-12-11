@@ -3,36 +3,19 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest ]
+    runs-on: self-hosted
+       
     steps:
 
-      - name: Remove pip workaround config (if present)
-        run: sudo rm -f /etc/pip.conf
+     
+     
+     - name: Checkout code
+       uses: actions/checkout@v4 
+     - name: Set up python
+       uses: actions/setup-python@v6
+       with:
       
-      - name: Check if pip workaround config is present
-        run: |
-          if [ -f /etc/pip.conf ]; then
-            echo "/etc/pip.conf still exists:"
-            cat /etc/pip.conf
-            exit 1
-          else
-            echo "/etc/pip.conf does NOT exist."
-          fi
-
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Set up python
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.11'
-          cache: pip
-          cache-dependency-path: temp/equirements.txt
-         
-
-      - name: install dep
-        run : pip install -r temp/requirements.txt
+            python-version:  '3.11'
+            cache: pip
+            cache-dependency-path: temp/equirements.txt 
+            pip-install: -r temp/requirements.txt
